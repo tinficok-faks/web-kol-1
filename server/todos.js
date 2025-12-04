@@ -12,9 +12,9 @@ const todos = [
   { title: "Review code", timestamp: 1764931675258, done: false }
 ];
 
-const expTodos = todos.map(todo => ({
+const baseTodos = todos.map(todo => ({
   ...todo,
   id: uuidv4(),
 }));
 
-module.exports = expTodos;
+module.exports = baseTodos;

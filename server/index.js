@@ -54,9 +54,10 @@ app.delete("/api/todos/:id", (req, res) => {
 });
 
 
-app.get("*", (req, res) => {
+app.use((req, res) => {
     res.sendFile(path.join(clientDistPath, "index.html"));
 });
+
 
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);

@@ -8,7 +8,6 @@ import $ from "jquery";
 
 let todos = [];
 
-// pretvori ms u "M/D/YYYY"
 function formatDate(ms) {
     const d = new Date(ms);
     const month = d.getMonth() + 1;
@@ -17,15 +16,11 @@ function formatDate(ms) {
     return `${month}/${day}/${year}`;
 }
 
-// ------------- API FUNKCIJE -------------
 
-// Zadatak 1 – get_todos (jQuery)
 function get_todos() {
-    // vraća Promise koji resolve-a na polje todos
     return $.getJSON("/api/todos");
 }
 
-// PUT /api/todos/:id
 function apiUpdateTodo(id, data) {
     return $.ajax({
         url: `/api/todos/${id}`,
@@ -36,7 +31,6 @@ function apiUpdateTodo(id, data) {
     });
 }
 
-// DELETE /api/todos/:id
 function apiDeleteTodo(id) {
     return $.ajax({
         url: `/api/todos/${id}`,
@@ -45,7 +39,6 @@ function apiDeleteTodo(id) {
     });
 }
 
-// ------------- RENDERING -------------
 
 function createTodoCard(todo) {
     const statusIcon = todo.done
@@ -82,14 +75,12 @@ function createTodoCard(todo) {
     </div>
   `);
 
-    // handleri
     $col.find(".btn-toggle").on("click", () => toggle(todo.id));
     $col.find(".btn-remove").on("click", () => removeTodo(todo.id));
 
     return $col;
 }
 
-// Zadatak 3 – render_todos
 function render_todos(data) {
     todos = data;
     const $row = $("#todosRow");
@@ -100,7 +91,6 @@ function render_todos(data) {
         $row.append($card);
     });
 
-    // fade-in efekt
     $("#todosRow .todo-card").each(function (index) {
         const $card = $(this);
         setTimeout(() => {
@@ -109,9 +99,7 @@ function render_todos(data) {
     });
 }
 
-// ------------- AKCIJE GUMBA -------------
 
-// Zadatak 3 – remove
 function removeTodo(id) {
     apiDeleteTodo(id)
         .done(() => {
@@ -121,7 +109,6 @@ function removeTodo(id) {
         .fail(err => console.error(err));
 }
 
-// Zadatak 3 – toggle
 function toggle(id) {
     const todo = todos.find(t => t.id === id);
     if (!todo) return;
@@ -136,7 +123,6 @@ function toggle(id) {
         .fail(err => console.error(err));
 }
 
-// ------------- INIT -------------
 
 $(document).ready(() => {
     get_todos()
