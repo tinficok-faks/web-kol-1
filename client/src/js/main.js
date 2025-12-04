@@ -124,6 +124,9 @@ function toggle(id) {
 
 
 $(document).ready(() => {
+    $("form").on("submit", function (e) {
+        e.preventDefault();
+    });
     get_todos()
         .done(data => {
             render_todos(data);
