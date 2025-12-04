@@ -15,7 +15,7 @@ const todos = [
 const baseTodos = todos.map(todo => ({
   ...todo,
   id: uuidv4(),
-  when: Number(todo.when),
+  when: Number(todo.timestamp),
 }));
 
 module.exports = baseTodos;

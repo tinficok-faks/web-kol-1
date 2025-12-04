@@ -13,7 +13,7 @@ function formatDate(ms) {
     const day = d.getDate();
     const month = d.getMonth() + 1;
     const year = d.getFullYear();
-    return `${day}/${month}/${year}`;
+    return `${month}/${day}/${year}`;
 }
 
 function get_todos() {
