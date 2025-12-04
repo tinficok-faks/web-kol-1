@@ -46,7 +46,7 @@ function createTodoCard(todo) {
 
     const $col = $(`
     <div class="col-12 col-md-6 col-xl-4">
-      <article class="card border-0 shadow-sm rounded-4 h-100 todo-card">
+      <article class="card border-0 shadow rounded-5 h-100 todo-card">
         <div class="card-body d-flex flex-column justify-content-between">
           <header class="mb-3">
             <h2 class="h4 mb-3">${todo.title}</h2>
