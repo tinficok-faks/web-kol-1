@@ -16,7 +16,6 @@ function formatDate(ms) {
     return `${day}/${month}/${year}`;
 }
 
-
 function get_todos() {
     return $.getJSON("/api/todos");
 }

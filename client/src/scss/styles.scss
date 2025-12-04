@@ -1,12 +1,13 @@
-@import "bootstrap/scss/bootstrap";
+@import "bootstrap/scss/functions";
 $bootstrap-icons-font-dir: "bootstrap-icons/font/fonts";
 @import "bootstrap-icons/font/bootstrap-icons";
-@import "bootstrap/scss/functions";
 
 $success: #3cb47c;
 $warning: #ffea63;
 $danger: #fe604e;
 
+@import "bootstrap/scss/bootstrap";
+@import "bootstrap/scss/variables";
 
 body {
     font-family: "Fraunces", system-ui, -apple-system, BlinkMacSystemFont,
