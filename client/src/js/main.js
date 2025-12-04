@@ -10,10 +10,10 @@ let todos = [];
 
 function formatDate(ms) {
     const d = new Date(ms);
-    const month = d.getMonth() + 1;
     const day = d.getDate();
+    const month = d.getMonth() + 1;
     const year = d.getFullYear();
-    return `${month}/${day}/${year}`;
+    return `${day}/${month}/${year}`;
 }
 
 
@@ -52,10 +52,10 @@ function createTodoCard(todo) {
           <header class="mb-3">
             <h2 class="h4 mb-3">${todo.title}</h2>
             <p class="mb-1">
-              <span class="fw-semibold">When:</span> ${formatDate(todo.when)}
+              <span class="fw-bold">When:</span> ${formatDate(todo.when)}
             </p>
             <p class="mb-0 d-flex align-items-center gap-2">
-              <span class="fw-semibold">Status:</span>
+              <span class="fw-bold">Status:</span>
               <span class="status-icon">${statusIcon}</span>
             </p>
           </header>
