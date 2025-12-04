@@ -59,13 +59,13 @@ function createTodoCard(todo) {
             </p>
           </header>
 
-          <div class="mt-3 d-grid gap-2 gap-sm-0 d-sm-flex">
+          <div class="mt-3 d-grid gap-2 gap-sm d-sm-flex">
             <button type="button"
-              class="btn btn-light border rounded-pill flex-fill me-sm-2 btn-toggle">
+              class="btn btn-light border rounded-pill w-100 w-sm-auto me-sm-2 btn-toggle">
               Toggle
             </button>
             <button type="button"
-              class="btn btn-light border rounded-pill flex-fill btn-remove">
+              class="btn btn-light border rounded-pill w-100 w-sm-auto btn-remove">
               Remove
             </button>
           </div>
